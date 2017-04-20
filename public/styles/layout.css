@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -20,6 +21,25 @@ body {
   background-color: #eee;
 }
 
+main {
+  width: 450px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  padding-left: 30px;
+  padding-bottom: 200px;
+  padding-right: 30px;
+  padding-top: 50px;
+}
+
+#check {
+  float: left;
+  padding-left: 10px;
+  color: red;
+}
+
+main
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

@@ -1,0 +1,45 @@
+nav {
+  position: fixed;
+  height: 80px;
+  top: 0px;
+  width: 100%;
+  background-color: #00a087;
+  color: #e8fdff;
+  padding-left: 2em;
+  padding-right: 2em;
+  z-index: 100;
+}
+
+#nav-bar .logo {
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+img.compose {
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+nav button {
+  float: right;
+  border-radius: 10px;
+  width: 150px;
+  height: 70px;
+  margin-top: 5px;
+  background-color: white;
+  filter: opacity(80%);
+  /*border: solid 1px #eee;*/
+  transition: filter 500ms ease-in-out;
+}
+
+nav button:hover {
+  filter: opacity(100%);
+}
+
+#nav-bar .header {
+  font-size: 200%;
+  float: left;
+  line-height: 80px;
+}

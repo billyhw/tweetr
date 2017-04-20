@@ -1,0 +1,96 @@
+section.new-tweet {
+  background-color: #eee;
+  border-radius: 10px;
+  padding-top: 4px;
+}
+
+h2 {
+  border-bottom: 1px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+textarea {
+  width: 370px;
+  height: 50px;
+  margin-left: 10px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+input {
+  margin-right: 280px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.counter {
+  font-style: italic;
+}
+
+/* old-tweet */
+
+section.old-tweet {
+  background-color: #eee;
+  border-radius: 10px;
+  margin-top: 30px;
+  filter: opacity(60%);
+  /*border: solid 1px #eee;*/
+
+  transition: filter 500ms ease-in-out;
+}
+
+section.old-tweet header {
+  padding-top: 0px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  background-color: #eee;
+  margin-top: 10px;
+}
+
+article {
+  border-radius: 10px;
+  border-color: #eee;
+  border: solid 1px #eee;
+}
+
+section div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  padding-left: 10px;
+}
+
+section footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding-left: 10px;
+}
+
+section.old-tweet:hover {
+  filter: opacity(100%);
+}
+
+section.old-tweet img {
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.user-name {
+  position: absolute;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.user-handler {
+  float: right;
+  margin-right: 5px;
+  margin-top: 7px;
+}
+
+.little-buttons {
+  float: right;
+}
