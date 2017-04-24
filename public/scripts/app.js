@@ -13,7 +13,6 @@ $( document ).ready( function () {
   $( "form" ).on( "submit", function( event ) {
     event.preventDefault();
     var text = $("textarea").val();
-    console.log(text)
 
     if (text === null || text === "") {
       $("span#check").text("Please enter a message.")
@@ -31,23 +30,11 @@ $( document ).ready( function () {
       data: $( this ).serialize(),
       method: 'POST',
       dataType: 'text',
-      // success: function (data) {
-      //   console.log('Success post');
-      //   $("textarea").val("");
-      //   $(".old-tweet").empty()
-      // }
       }).done(function (data) {
-          console.log('done posting');
           $("textarea").val("");
-          // $(".old-tweet").empty()
-          loadTweets() //$('main-container').trigger('reload', loadTweets) // call this outside .ajax
+          loadTweets()
         })
     });
-
-  $("main-container").on('reload', function( event ) {
-    console.log("main triggered")
-    loadTweets();
-  })
 
   function loadTweets() {
     $.ajax({
@@ -55,7 +42,6 @@ $( document ).ready( function () {
       method: 'GET',
       dataType: 'json',
       success: function (tweets) {
-        console.log('Success load');
         renderTweets(tweets);
       }
     });
@@ -78,14 +64,24 @@ $( document ).ready( function () {
     const daysAgo =  Math.floor( ( Date.now() - tweetData.created_at )/1000/60/60/24 )
 
     $tweet.children("article").append("<footer>");
-    $tweet.find("footer").html(`${daysAgo} days ago <span class="little-buttons"></span>`);
-    $tweet.find("footer").append("<span>");
-    $tweet.children("footer").find("span").addClass("little-buttons")
-    $tweet.find("span.little-buttons").html('<img src="https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png" width = "20" height="20"> <img src="https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png" width = "20" height="20"> <img src="https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png" width = "20" height="20">');
+    $tweet.find("footer").html(`${daysAgo} days ago`);
+    $tweet.find("footer").append("<span class='little-buttons'>");
+    $tweet.find("span.little-buttons").html('<img src="https://vanillicon.com/1.png" alt="like", width = "20" height="20"> <img src="https://vanillicon.com/1.png" alt="retweet" width = "20" height="20"> <img src="https://vanillicon.com/1.png" alt="flag" width = "20" height="20"> ');
 
     return $tweet
 
   };
+
+  $("section.form").click((ev) => {
+    event.preventDefault();
+    $.ajax({
+      url: '/tweets',
+      data: $(this),
+      method: 'POST',
+      dataType: 'text'
+    });
+
+  })
 
   function renderTweets(tweets) {
     // loops through tweets
@@ -97,13 +93,10 @@ $( document ).ready( function () {
         $html.append(createTweetElement(tweets[i]));
       }
       $tweetsContainer.html($html);
-      // tweets.forEach((tweet) => {
-      //   mainContainer.append(createTweetElement(tweet));
-      // });
   };
-
   $('nav button').on("click", function (event) {
-    if ($('.new-tweet').is(':visible')) { //attr('style') === 'display: none;') {
+    event.preventDefault();
+    if ($('.new-tweet').is(':visible')) {
       $('.new-tweet').slideUp();
     }
     else {
@@ -111,5 +104,4 @@ $( document ).ready( function () {
       $('textarea').focus()
     }
   })
-
 });

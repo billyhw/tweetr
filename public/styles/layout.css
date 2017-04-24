@@ -33,12 +33,6 @@ main {
   padding-top: 50px;
 }
 
-#check {
-  float: left;
-  padding-left: 10px;
-  color: red;
-}
-
 main
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

@@ -29,6 +29,12 @@ input {
   font-style: italic;
 }
 
+#check {
+  float: left;
+  padding-left: 10px;
+  color: red;
+}
+
 /* old-tweet */
 
 section.old-tweet {
@@ -36,9 +42,7 @@ section.old-tweet {
   border-radius: 10px;
   margin-top: 30px;
   filter: opacity(60%);
-  /*border: solid 1px #eee;*/
-
-  transition: filter 500ms ease-in-out;
+  /*transition: filter 500ms ease-in-out;*/
 }
 
 section.old-tweet header {
